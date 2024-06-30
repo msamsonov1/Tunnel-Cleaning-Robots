@@ -1,0 +1,30 @@
+import random
+
+# Define locations for robots (WMATA stations)
+stations = [
+    "Metro Center", "Gallery Place", "Woodley Park", "Cleveland Park",
+    "Van Ness-UDC", "Tenleytown-AU", "Friendship Heights", "Bethesda",
+    "Silver Spring", "Forest Glen", "Wheaton", "Glenmont"
+]
+
+# Define probability of a robot being at a station
+robot_probability = 0.3  # Adjust this value between 0 and 1
+
+def spot_robot(stations):
+  """Simulates spotting a robot in a WMATA station.
+
+  Args:
+      stations: List of WMATA station names.
+
+  Returns:
+      A string indicating the station where a robot is spotted, 
+      or "No robot found" if none are spotted.
+  """
+  for station in stations:
+    if random.random() < robot_probability:
+      return f"Robot spotted at {station} station."
+  return "No robot found."
+
+# Simulate spotting a robot
+result = spot_robot(stations)
+print(result)
